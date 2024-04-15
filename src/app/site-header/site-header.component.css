@@ -1,0 +1,29 @@
+
+.right{
+    display: flex;
+    flex-direction: row;
+}
+
+.left{
+    display: flex;
+    flex-direction: row;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 90%;
+    border: 2px solid darkviolet;
+    padding: 10px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: x-large;
+}
+
+a{
+    padding-right: 10px;
+    color: rgb(65, 65, 155);
+    
+}
+
