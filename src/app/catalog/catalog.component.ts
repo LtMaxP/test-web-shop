@@ -9,17 +9,17 @@ import { HttpProductService } from './product.service';
   styleUrl: './catalog.component.css'
 })
 export class CatalogComponent {
-products: any;
+  products: any;
 
   constructor(private productSvc: HttpProductService){
 
   }
   ngOnInit(){
     this.productSvc.getAllProducts().subscribe(products => {
-        this.products = this.products;
+        this.products = products;
     });
   }
-  prods: IProduct[] = [];
+  
 
   getAllP(){
 

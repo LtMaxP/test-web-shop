@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 export const routes: Routes = [  
@@ -12,8 +13,8 @@ export const routes: Routes = [
 
 @NgModule({
     declarations: [],
-    imports: [
-      RouterModule.forRoot(routes), HttpClientModule
+    imports: [ RouterModule.forRoot(routes), 
+      HttpClientModule
     ],
     exports: [RouterModule]
   })
