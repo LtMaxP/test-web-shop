@@ -1,10 +1,16 @@
 <p>catalog works!</p>
 
-<ul>
-    <li class="product-item" *ngFor="let product of products">
-        <div>yes</div>
-    </li>
-</ul>
-<div>
-
+<div *ngIf="productos?.length">
+    <ul>
+        <li class="product-item" *ngFor="let product of productos">
+            <div>Descripcion: {{ product.description }}</div>
+            <div>Nombre: {{ product.name }}</div>
+            <div>Precio: {{ product.price }}</div>
+            <div>Categoria: {{ product.category }}</div>
+        </li>
+    </ul>
 </div>
+
+<div *ngIf="!productos?.length">
+    <span>No products</span>
+</div> 

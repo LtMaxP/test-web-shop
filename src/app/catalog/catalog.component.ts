@@ -1,28 +1,38 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { IProduct } from './product.model';
 import { HttpProductService } from './product.service';
+import { Observable } from 'rxjs';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
-  styleUrl: './catalog.component.css'
+  standalone: true,
+  imports: [CommonModule],
+  styleUrl: './catalog.component.css',
 })
+
 export class CatalogComponent {
-  products: any;
+  productos?: IProduct[] = [];
 
   constructor(private productSvc: HttpProductService){
 
   }
+
   ngOnInit(){
-    this.productSvc.getAllProducts().subscribe(products => {
-        this.products = products;
-    });
+       this.productSvc.getAllProducts().subscribe(products => {
+           this.productos = products;
+       });
   }
   
 
-  getAllP(){
-
-  }
+  // getAllP() : Observable<IProduct[]>{
+  //   return this.productSvc.getAllProducts().subscribe(products => {
+  //          this.productos = products;
+  //      });
+  // };
 
 }

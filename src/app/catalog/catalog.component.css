@@ -1,3 +1,6 @@
 .product-item{
-    color: red;
+    color: crimson;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
 }
