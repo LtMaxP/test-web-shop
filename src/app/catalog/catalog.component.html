@@ -1,12 +1,22 @@
 <p>catalog works!</p>
 
 <div *ngIf="productos?.length">
-    <ul>
+    <ul class="products">
         <li class="product-item" *ngFor="let product of productos">
-            <div>Descripcion: {{ product.description }}</div>
-            <div>Nombre: {{ product.name }}</div>
-            <div>Precio: {{ product.price }}</div>
-            <div>Categoria: {{ product.category }}</div>
+            <div class="product">
+                <div class="product-details">
+                    <img  [src]="getImageUrl(product)"  />
+                    <div class="product-info">
+                        <div class="description">Descripcion: {{ product.description }}</div>
+                        <div class="name">Nombre: {{ product.name }}</div>
+                        <div class="price">Precio: {{ product.price }}</div>
+                    <div class="category">Categoria: {{ product.category }}</div>                    </div>
+                </div>
+                <div class="price">
+                    <div>${{ product.price }}</div>
+                    <button class="cta">Comprar</button>
+                </div> 
+            </div>
         </li>
     </ul>
 </div>

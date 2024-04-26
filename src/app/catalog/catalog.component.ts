@@ -16,19 +16,23 @@ import { BrowserModule } from '@angular/platform-browser';
 })
 
 export class CatalogComponent {
+
   productos?: IProduct[] = [];
-
+  
   constructor(private productSvc: HttpProductService){
-
-  }
-
-  ngOnInit(){
-       this.productSvc.getAllProducts().subscribe(products => {
-           this.productos = products;
-       });
+    
   }
   
-
+  ngOnInit(){
+    this.productSvc.getAllProducts().subscribe(products => {
+      this.productos = products;
+    });
+  }
+  
+  
+  getImageUrl(prod: IProduct) {
+    return "/assets/images/${prod.image}";
+  }
   // getAllP() : Observable<IProduct[]>{
   //   return this.productSvc.getAllProducts().subscribe(products => {
   //          this.productos = products;
