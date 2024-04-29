@@ -4,3 +4,11 @@
     flex-direction: column;
     padding-top: 1rem;
 }
+
+.filter{
+    display: flex;
+    flex-direction: row;
+}
+.button{
+    padding-left: 1rem;
+}

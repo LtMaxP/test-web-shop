@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule, NgIf } from '@angular/common';
 import { IProduct } from './product.model';
-import { HttpProductService } from './product.service';
+import { ProductService } from './product.service';
 import { Observable } from 'rxjs';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -18,9 +18,9 @@ import { ProductDetailsComponent } from '../product-details/product-details.comp
 
 export class CatalogComponent {
   productos?: IProduct[] = [];
-  filter: string = '';
+  filter: number = 0;
 
-  constructor(private productSvc: HttpProductService){
+  constructor(private productSvc: ProductService){
     
   }
   
@@ -36,10 +36,10 @@ export class CatalogComponent {
   }
   
   getFilteredProducts(){
-    return this.filter === ''
+    return this.filter === 0
     ? this.productos
     : this.productos?.filter(
-      (producti: any) => producti.category === this.filter
+      (producti: any) => producti.productTypeId === this.filter
     );
   }
 

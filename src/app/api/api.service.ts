@@ -5,6 +5,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiService {
+  apiUrlString = 'https://localhost:7224';
 
-  constructor(private myHttpClient: HttpClient) { }
+  constructor(private myHttpClient: HttpClient) 
+  { 
+
+  }
+
+  apiUrl(){
+    return this.apiUrlString;
+  }
 }

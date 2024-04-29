@@ -1,12 +1,15 @@
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { CatalogComponent } from './catalog/catalog.component';
-import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+
+import { HomeComponent } from './home/home.component';
+import { CatalogComponent } from './catalog/catalog.component';
 import { CartComponent } from './cart/cart.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { RegisterFormComponent } from './user/register-form/register-form.component';
+import { NgModule } from '@angular/core';
+
 
 export const routes: Routes = [  
   {path: 'home', component:HomeComponent, title:"HomePage :)"},
@@ -20,7 +23,7 @@ export const routes: Routes = [
 @NgModule({
     declarations: [],
     imports: [ RouterModule.forRoot(routes), 
-      HttpClientModule
+      HttpClientModule, FormsModule, BrowserModule
     ],
     exports: [RouterModule]
   })

@@ -1,20 +1,19 @@
 <p>catalog works!</p>
 
 <div class="filter">
-    <a class="button" (click)="filter = ''">Remera</a>
-    <a class="button" (click)="filter = ''">Musculosa</a>
-    <a class="button" (click)="filter = ''">Pantalon</a>
-    <a class="button" (click)="filter = ''">All</a>
+    <button class="button" (click)="filter = 1">Remera</button>
+    <button class="button" (click)="filter = 2">Pantalon</button>
+    <button class="button" (click)="filter = 3">Collar</button>
+    <button class="button" (click)="filter = 4">Buzo</button>
+    <button class="button" (click)="filter = 5">Campera</button>
+    <button class="button" (click)="filter = 0">All</button>
 </div>
 
-<div *ngIf="productos?.length">
+<div *ngIf="productos?.length; else loader">
     <ul class="products">
-        <li class="product-item" *ngFor="let currentProduct of productos">
+        <li class="product-item" *ngFor="let currentProduct of getFilteredProducts()">
            <app-product-details [product]="currentProduct" (buy)="AddToCart(currentProduct)"> </app-product-details>
         </li>
     </ul>
 </div>
-
-<div *ngIf="!productos?.length">
-    <span>No products</span>
-</div> 
+<ng-template #loader> No products </ng-template>
