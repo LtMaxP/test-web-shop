@@ -5,9 +5,9 @@ import { routes } from './app.routes';
 
 
 import { provideClientHydration } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import { FormsModule, NgModel } from '@angular/forms';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration(), provideHttpClient(), FormsModule, NgModel]
+  providers: [provideRouter(routes), provideClientHydration(), provideHttpClient(withFetch()), FormsModule, NgModel]
 };

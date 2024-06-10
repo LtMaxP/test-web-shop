@@ -8,21 +8,21 @@ import { ApiService } from '../api/api.service';
   providedIn: 'root'
 })
 export class UserService {
-  private user: BehaviorSubject<IUser | null>; //????
+  private user: BehaviorSubject<IUserCredentials | null>; //????
   
   constructor(private http: HttpClient, private apiServicio: ApiService) {
-    this.user = new BehaviorSubject<IUser | null>(null);
+    this.user = new BehaviorSubject<IUserCredentials | null>(null);
   }
   
   apiUrl = this.apiServicio.apiUrlString;
   
-  getUser(): Observable<IUser | null>{
+  getUser(): Observable<IUserCredentials | null>{
     return this.user;
   }
 
 
   signIn(credentials: IUserCredentials): Observable<IUser>{
-    return this.http.post<IUser>(`${this.apiUrl}/User/GetValidation`, credentials)  
+    return this.http.post<IUser>(`${this.apiUrl}/User/ValidateSignInUser`, credentials)  
     .pipe(map((user: IUser) => {
       this.user.next(user);
       return user;
@@ -31,5 +31,13 @@ export class UserService {
 
   signOut(){
     this.user.next(null);
+  }
+
+  registerNewUser(credentials: IUser): Observable<IUser>{
+    return this.http.post<IUser>(`${this.apiUrl}/User/PostNewUser`, credentials)  
+    .pipe(map((user: IUser) => {
+      this.user.next(user);
+      return user;
+    }))
   }
 }

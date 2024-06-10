@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { IUser } from '../user/user.model';
+import { IUser, IUserCredentials } from '../user/user.model';
 import { UserService } from '../user/user.service';
 import { NgIf } from '@angular/common';
 
@@ -12,7 +12,7 @@ import { NgIf } from '@angular/common';
   styleUrl: './site-header.component.css'
 })
 export class SiteHeaderComponent {
-  user: IUser | null = null;
+  user: IUserCredentials | null = null;
   showSignOutMenu: boolean = false;
 
   constructor(private userService: UserService){

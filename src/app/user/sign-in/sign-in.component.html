@@ -3,8 +3,8 @@
     <form class="form" (ngSubmit)="SignIn()">
         <img class="logo" src="/assets/images/logo.png" />
 
-        <input type="text" [(ngModel)]="credentials.email" placeholder="email" />
-        <input type="password" [(ngModel)]="credentials.password" placeholder="Password" />
+        <input type="text" [(ngModel)]="credentials.email" name="email" placeholder="email" />
+        <input type="password" [(ngModel)]="credentials.password" name="password" placeholder="Password" />
         <div class="button">
             <button  >Log In</button>
         </div>
