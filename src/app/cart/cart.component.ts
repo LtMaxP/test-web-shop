@@ -11,22 +11,24 @@ import { ProductService } from '../catalog/product.service';
   styleUrl: './cart.component.css'
 })
 export class CartComponent {
+[x: string]: any;
   products: IProduct[] = [];
-  totalPrice: number = 0.0;
-
-constructor(private productSvc: ProductService) {
-   
-}
-
+  totalP: number = 0 ;
+  constructor(private productSvc: ProductService) {
+    
+  }
+  
   ngOnInit(){
     this.products = this.productSvc.getCart();
-
-  }
-
-  calculationTotalPrice(){
+    this.totalP = this.calculationTotalPrice();
+    }
+    
+    calculationTotalPrice(): number{
+    let totalPrice = 0;
     this.products.forEach(element => {
-      this.totalPrice = this.totalPrice + element.price;
+      totalPrice = totalPrice + (+element.price);
     });
+    return totalPrice;
   }
 
   getImageUrl(prod: IProduct) {
@@ -34,6 +36,6 @@ constructor(private productSvc: ProductService) {
   }
 
   buyButton(){
-    
+
   }
 }

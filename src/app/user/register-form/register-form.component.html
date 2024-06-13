@@ -1,13 +1,15 @@
 <p>register-form works!</p>
 <div class="container">
     <form class="form" (ngSubmit)="RegisterNewUser()">
-        <img class="logo" src="/assets/images/LogUser.png" style="width: 10%;"/>
+        <div class="contentForm">
 
-        <input type="text" [(ngModel)]="userCreation.firstName" name="firstName" placeholder="Nombre" />
-        <input type="text" [(ngModel)]="userCreation.lastName" name="lastName"  placeholder="Apellido" />
-        <input type="text" [(ngModel)]="userCreation.email" name="email"  placeholder="Email" />
-        <input type="password" [(ngModel)]="userCreation.password" name="password"  placeholder="Password" />
-        <div class="button">
+            <input type="text" [(ngModel)]="userCreation.firstName" name="firstName" placeholder="Nombre" />
+            <input type="text" [(ngModel)]="userCreation.lastName" name="lastName" placeholder="Apellido" />
+            <input type="text" [(ngModel)]="userCreation.email" name="email" placeholder="Email" />
+            <input type="password" [(ngModel)]="userCreation.password" name="password" placeholder="Password" />
+            <div class="button">
+            </div>
+            <img class="logo" src="/assets/images/LogUser.png" style="width: 5%;" />
             <button>Registrar</button>
         </div>
         <div class="registerError" *ngIf="registerError">
