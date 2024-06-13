@@ -27,4 +27,8 @@ export class ProductService {
     console.log(`product ${prod.name} added to cart`)
   }
 
+  getCart(): IProduct[]{
+    return this.cart;
+  }
+
 }

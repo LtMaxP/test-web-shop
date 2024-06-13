@@ -1,12 +1,12 @@
 <p>sign-in works!</p>
 <div class="container">
     <form class="form" (ngSubmit)="SignIn()">
-        <img class="logo" src="/assets/images/logo.png" />
+        <img class="logo" src="/assets/images/SignUp.png" style="width: 10%;"/>
 
         <input type="text" [(ngModel)]="credentials.email" name="email" placeholder="email" />
         <input type="password" [(ngModel)]="credentials.password" name="password" placeholder="Password" />
         <div class="button">
-            <button  >Log In</button>
+            <button>Log In</button>
         </div>
         <div class="signInError" *ngIf="signInError">
             Sign-In Incorrecto. Por favor intente nuevamente

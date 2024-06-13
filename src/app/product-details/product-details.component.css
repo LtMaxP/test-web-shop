@@ -1,0 +1,17 @@
+.product{
+    size: 1ch;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.product-details{
+    size: 1ch;
+    display: flex;
+    justify-content: center;
+}
+.priceClass{
+    display: flex;
+    justify-content: center;
+}
+
+

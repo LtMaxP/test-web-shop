@@ -1,1 +1,21 @@
 <p>cart works!</p>
+
+<div *ngIf="products?.length; else loader">
+    <ul class="products">
+        <li class="product-item" *ngFor="let currentProduct of products">
+            <div class="product-details">
+                <img  [src]="getImageUrl(currentProduct)" alt="image" style="width: 5%;" />
+                <div class="product-info">
+                    <div class="description">Descripcion: {{ currentProduct.description }}</div>
+                    <div class="name">Nombre: {{ currentProduct.name }}</div>
+                    <div class="price">Precio: {{ currentProduct.price }}</div>
+                <div class="category">Categoria: {{ currentProduct.category }}</div>                    </div>
+            </div>
+        </li>
+    </ul>
+    <div class="CompraSeccion">
+    <div>Total de compra: {{totalPrice}}</div>
+    <button class="cta" (click)="buyButton()">Comprar</button>
+    </div>
+</div>
+<ng-template #loader> No products </ng-template>
