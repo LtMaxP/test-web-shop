@@ -31,7 +31,7 @@ export class CatalogComponent {
   }
 
   AddToCart(prod: IProduct) {
-    this.productSvc.add(prod);
+    this.productSvc.addFun(prod);
     console.log(`product ${prod.name} added to cart`)
   }
   

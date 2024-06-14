@@ -22,7 +22,7 @@ export class ProductService {
   }
 
   //Funciones
-  add(prod: IProduct) {
+  addFun(prod: IProduct) {
     this.cart.push(prod);
     console.log(`product ${prod.name} added to cart`)
   }
